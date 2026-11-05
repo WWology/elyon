@@ -1,0 +1,210 @@
+/* These tokens are generated using https://themes.angular-material.dev/ */
+/* Preview: https://themes.angular-material.dev/?bold-font-weight=700&brand-font-family=Roboto&medium-font-weight=500&plain-font-family=Roboto&regular-font-weight=400&seed-error=%23ba1a1a&seed-neutral=%2382746b&seed-neutral-variant=%23887365&seed-primary=%23ED8A33&seed-secondary=%23815432&seed-tertiary=%235c6300 */
+/* Seed Colors: primary: #ED8A33, secondary: #815432, tertiary: #5c6300, error: #ba1a1a, neutral: #82746b, neutral-variant: #887365 */
+/* Seed Typography: plain-font-family: Roboto, brand-font-family: Roboto, bold-font-weight: 700, medium-font-weight: 500, regular-font-weight: 400 */
+
+/* Make sure to import fonts in `<head>` of html */
+/*
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto&display=swap');
+</style>
+
+OR
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto&display=swap">
+*/
+
+/* Light Theme */
+:root,
+:host {
+  --mat-sys-primary: #924c00;
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #ffdcc4;
+  --mat-sys-on-primary-container: #2f1400;
+  --mat-sys-inverse-primary: #ffb781;
+  --mat-sys-primary-fixed: #ffdcc4;
+  --mat-sys-primary-fixed-dim: #ffb781;
+  --mat-sys-on-primary-fixed: #2f1400;
+  --mat-sys-on-primary-fixed-variant: #6f3800;
+  --mat-sys-secondary: #815432;
+  --mat-sys-on-secondary: #ffffff;
+  --mat-sys-secondary-container: #ffdcc5;
+  --mat-sys-on-secondary-container: #301400;
+  --mat-sys-secondary-fixed: #ffdcc5;
+  --mat-sys-secondary-fixed-dim: #f6ba90;
+  --mat-sys-on-secondary-fixed: #301400;
+  --mat-sys-on-secondary-fixed-variant: #663d1d;
+  --mat-sys-tertiary: #5c6300;
+  --mat-sys-on-tertiary: #ffffff;
+  --mat-sys-tertiary-container: #e1ea80;
+  --mat-sys-on-tertiary-container: #1b1d00;
+  --mat-sys-tertiary-fixed: #e1ea80;
+  --mat-sys-tertiary-fixed-dim: #c5cd67;
+  --mat-sys-on-tertiary-fixed: #1b1d00;
+  --mat-sys-on-tertiary-fixed-variant: #454b00;
+  --mat-sys-background: #fef8f6;
+  --mat-sys-on-background: #1d1b1a;
+  --mat-sys-surface: #fef8f6;
+  --mat-sys-surface-dim: #ded9d7;
+  --mat-sys-surface-bright: #fef8f6;
+  --mat-sys-surface-container-lowest: #ffffff;
+  --mat-sys-surface-container-low: #f8f2f1;
+  --mat-sys-surface-container: #f2edeb;
+  --mat-sys-surface-container-high: #ece7e5;
+  --mat-sys-surface-container-highest: #e7e1e0;
+  --mat-sys-on-surface: #1d1b1a;
+  --mat-sys-shadow: #000000;
+  --mat-sys-scrim: #000000;
+  --mat-sys-surface-tint: #695c53;
+  --mat-sys-inverse-surface: #32302f;
+  --mat-sys-inverse-on-surface: #f5f0ee;
+  --mat-sys-outline: #7f756f;
+  --mat-sys-outline-variant: #d2c4bc;
+  --mat-sys-neutral: #7a7675;
+  --mat-sys-neutral10: #1d1b1a;
+  --mat-sys-error: #ba1a1a;
+  --mat-sys-error-container: #ffdad6;
+  --mat-sys-on-error: #ffffff;
+  --mat-sys-on-error-container: #410002;
+  --mat-sys-surface-variant: #eee0d7;
+  --mat-sys-on-surface-variant: #4e453f;
+  --mat-sys-neutral-variant: #80756e;
+  --mat-sys-neutral-variant20: #372f29;
+  --mat-sys-inverse-secondary: #f6ba90;
+  --mat-sys-inverse-tertiary: #c5cd67;
+}
+
+/* Dark Theme */
+.dark {
+  --mat-sys-primary: #ffb781;
+  --mat-sys-on-primary: #4e2600;
+  --mat-sys-primary-container: #6f3800;
+  --mat-sys-on-primary-container: #ffdcc4;
+  --mat-sys-inverse-primary: #924c00;
+  --mat-sys-primary-fixed: #ffdcc4;
+  --mat-sys-primary-fixed-dim: #ffb781;
+  --mat-sys-on-primary-fixed: #2f1400;
+  --mat-sys-on-primary-fixed-variant: #6f3800;
+  --mat-sys-secondary: #f6ba90;
+  --mat-sys-on-secondary: #4b2709;
+  --mat-sys-secondary-container: #663d1d;
+  --mat-sys-on-secondary-container: #ffdcc5;
+  --mat-sys-secondary-fixed: #ffdcc5;
+  --mat-sys-secondary-fixed-dim: #f6ba90;
+  --mat-sys-on-secondary-fixed: #301400;
+  --mat-sys-on-secondary-fixed-variant: #663d1d;
+  --mat-sys-tertiary: #c5cd67;
+  --mat-sys-on-tertiary: #2f3300;
+  --mat-sys-tertiary-container: #454b00;
+  --mat-sys-on-tertiary-container: #e1ea80;
+  --mat-sys-tertiary-fixed: #e1ea80;
+  --mat-sys-tertiary-fixed-dim: #c5cd67;
+  --mat-sys-on-tertiary-fixed: #1b1d00;
+  --mat-sys-on-tertiary-fixed-variant: #454b00;
+  --mat-sys-background: #141312;
+  --mat-sys-on-background: #e7e1e0;
+  --mat-sys-surface: #141312;
+  --mat-sys-surface-dim: #141312;
+  --mat-sys-surface-bright: #3b3938;
+  --mat-sys-surface-container-lowest: #0f0e0d;
+  --mat-sys-surface-container-low: #1d1b1a;
+  --mat-sys-surface-container: #211f1e;
+  --mat-sys-surface-container-high: #2b2a29;
+  --mat-sys-surface-container-highest: #363433;
+  --mat-sys-on-surface: #e7e1e0;
+  --mat-sys-shadow: #000000;
+  --mat-sys-scrim: #000000;
+  --mat-sys-surface-tint: #d4c3b9;
+  --mat-sys-inverse-surface: #e7e1e0;
+  --mat-sys-inverse-on-surface: #32302f;
+  --mat-sys-outline: #9a8f88;
+  --mat-sys-outline-variant: #4e453f;
+  --mat-sys-neutral: #7a7675;
+  --mat-sys-neutral10: #1d1b1a;
+  --mat-sys-error: #ffb4ab;
+  --mat-sys-error-container: #93000a;
+  --mat-sys-on-error: #690005;
+  --mat-sys-on-error-container: #ffdad6;
+  --mat-sys-surface-variant: #4e453f;
+  --mat-sys-on-surface-variant: #d2c4bc;
+  --mat-sys-neutral-variant: #80756e;
+  --mat-sys-neutral-variant20: #372f29;
+  --mat-sys-inverse-secondary: #815432;
+  --mat-sys-inverse-tertiary: #5c6300;
+}
+
+/* Typography */
+:root,
+:host {
+  --mat-sys-brand-font-family: Roboto;
+  --mat-sys-plain-font-family: Roboto;
+  --mat-sys-bold-font-weight: 700;
+  --mat-sys-medium-font-weight: 500;
+  --mat-sys-regular-font-weight: 400;
+  --mat-sys-headline-large-font: var(--mat-sys-brand-font-family);
+  --mat-sys-headline-medium-font: var(--mat-sys-brand-font-family);
+  --mat-sys-headline-small-font: var(--mat-sys-brand-font-family);
+  --mat-sys-display-large-font: var(--mat-sys-brand-font-family);
+  --mat-sys-display-medium-font: var(--mat-sys-brand-font-family);
+  --mat-sys-display-small-font: var(--mat-sys-brand-font-family);
+  --mat-sys-title-large-font: var(--mat-sys-brand-font-family);
+  --mat-sys-body-large: var(--mat-sys-body-large-weight) var(--mat-sys-body-large-size) /
+    var(--mat-sys-body-large-line-height) var(--mat-sys-body-large-font);
+  --mat-sys-body-medium: var(--mat-sys-body-medium-weight) var(--mat-sys-body-medium-size) /
+    var(--mat-sys-body-medium-line-height) var(--mat-sys-body-medium-font);
+  --mat-sys-body-small: var(--mat-sys-body-small-weight) var(--mat-sys-body-small-size) /
+    var(--mat-sys-body-small-line-height) var(--mat-sys-body-small-font);
+  --mat-sys-label-large: var(--mat-sys-label-large-weight) var(--mat-sys-label-large-size) /
+    var(--mat-sys-label-large-line-height) var(--mat-sys-label-large-font);
+  --mat-sys-label-medium: var(--mat-sys-label-medium-weight) var(--mat-sys-label-medium-size) /
+    var(--mat-sys-label-medium-line-height) var(--mat-sys-label-medium-font);
+  --mat-sys-label-small: var(--mat-sys-label-small-weight) var(--mat-sys-label-small-size) /
+    var(--mat-sys-label-small-line-height) var(--mat-sys-label-small-font);
+  --mat-sys-title-large: var(--mat-sys-title-large-weight) var(--mat-sys-title-large-size) /
+    var(--mat-sys-title-large-line-height) var(--mat-sys-title-large-font);
+  --mat-sys-title-medium: var(--mat-sys-title-medium-weight) var(--mat-sys-title-medium-size) /
+    var(--mat-sys-title-medium-line-height) var(--mat-sys-title-medium-font);
+  --mat-sys-title-small: var(--mat-sys-title-small-weight) var(--mat-sys-title-small-size) /
+    var(--mat-sys-title-small-line-height) var(--mat-sys-title-small-font);
+  --mat-sys-headline-large: var(--mat-sys-headline-large-weight)
+    var(--mat-sys-headline-large-size) / var(--mat-sys-headline-large-line-height)
+    var(--mat-sys-headline-large-font);
+  --mat-sys-headline-medium: var(--mat-sys-headline-medium-weight)
+    var(--mat-sys-headline-medium-size) / var(--mat-sys-headline-medium-line-height)
+    var(--mat-sys-headline-medium-font);
+  --mat-sys-headline-small: var(--mat-sys-headline-small-weight)
+    var(--mat-sys-headline-small-size) / var(--mat-sys-headline-small-line-height)
+    var(--mat-sys-headline-small-font);
+  --mat-sys-display-large: var(--mat-sys-display-large-weight) var(--mat-sys-display-large-size) /
+    var(--mat-sys-display-large-line-height) var(--mat-sys-display-large-font);
+  --mat-sys-display-medium: var(--mat-sys-display-medium-weight)
+    var(--mat-sys-display-medium-size) / var(--mat-sys-display-medium-line-height)
+    var(--mat-sys-display-medium-font);
+  --mat-sys-display-small: var(--mat-sys-display-small-weight) var(--mat-sys-display-small-size) /
+    var(--mat-sys-display-small-line-height) var(--mat-sys-display-small-font);
+  --mat-sys-body-large-font: var(--mat-sys-plain-font-family);
+  --mat-sys-body-medium-font: var(--mat-sys-plain-font-family);
+  --mat-sys-body-small-font: var(--mat-sys-plain-font-family);
+  --mat-sys-label-large-font: var(--mat-sys-plain-font-family);
+  --mat-sys-label-medium-font: var(--mat-sys-plain-font-family);
+  --mat-sys-label-small-font: var(--mat-sys-plain-font-family);
+  --mat-sys-title-medium-font: var(--mat-sys-plain-font-family);
+  --mat-sys-title-small-font: var(--mat-sys-plain-font-family);
+  --mat-sys-label-large-weight-prominent: var(--mat-sys-bold-font-weight);
+  --mat-sys-label-medium-weight-prominent: var(--mat-sys-bold-font-weight);
+  --mat-sys-label-large-weight: var(--mat-sys-medium-font-weight);
+  --mat-sys-label-medium-weight: var(--mat-sys-medium-font-weight);
+  --mat-sys-label-small-weight: var(--mat-sys-medium-font-weight);
+  --mat-sys-title-medium-weight: var(--mat-sys-medium-font-weight);
+  --mat-sys-title-small-weight: var(--mat-sys-medium-font-weight);
+  --mat-sys-body-large-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-body-medium-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-body-small-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-display-large-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-display-medium-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-display-small-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-headline-large-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-headline-medium-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-headline-small-weight: var(--mat-sys-regular-font-weight);
+  --mat-sys-title-large-weight: var(--mat-sys-regular-font-weight);
+}
