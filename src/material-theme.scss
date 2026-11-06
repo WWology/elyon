@@ -11,8 +11,9 @@ html {
   @include mat.theme(
     (
       color: (
-        primary: theme-colors.$primary,
-        tertiary: theme-colors.$tertiary,
+        theme-type: light,
+        primary: theme-colors.$primary-palette,
+        tertiary: theme-colors.$tertiary-palette,
       ),
       typography: Roboto,
       density: 0,
