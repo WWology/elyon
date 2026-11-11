@@ -13,8 +13,12 @@
 			]
 		},
 		"supabase": {
-      		"type": "http",
-      		"url": "https://mcp.supabase.com/mcp?project_ref=fodeifjwivducpfjdccl&features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching%2Cfeedback"
-    	}
+			"type": "http",
+			"url": "https://mcp.supabase.com/mcp?project_ref=fodeifjwivducpfjdccl&features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching%2Cfeedback"
+		},
+		"Supabase-Local": {
+			"url": "http://127.0.0.1:54321/mcp",
+			"type": "http"
+		}
 	}
 }
