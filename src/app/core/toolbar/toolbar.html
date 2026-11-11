@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <button matIconButton [matMenuTriggerFor]="navMenu" aria-label="Open navigation menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #navMenu="matMenu">
+    <button mat-menu-item>Home</button>
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Settings</button>
+  </mat-menu>
+  <span>Notitia </span>
+</mat-toolbar>

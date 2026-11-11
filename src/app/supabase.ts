@@ -37,4 +37,8 @@ export class Supabase {
     }
     return user;
   }
+
+  authChanges(callback: (event: AuthChangeEvent, session: Session | null) => void) {
+    return this.supabase.auth.onAuthStateChange(callback);
+  }
 }

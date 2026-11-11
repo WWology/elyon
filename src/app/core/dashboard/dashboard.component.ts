@@ -7,6 +7,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { Toolbar } from '../toolbar/toolbar';
 
 @Component({
   selector: 'notitia-dashboard',
@@ -19,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    Toolbar,
   ],
 })
 export class DashboardComponent {
