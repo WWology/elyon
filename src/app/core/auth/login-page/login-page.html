@@ -1,1 +1,61 @@
-<p>login-page works!</p>
+<main class="login-page">
+  <section class="form-panel" aria-labelledby="login-title">
+    <div class="form-content">
+      <p class="eyebrow">WELCOME BACK</p>
+      <h1 id="login-title">Sign in to Notitia</h1>
+      <p class="intro">Enter your details to access your account.</p>
+
+      <form class="login-form" (submit)="$event.preventDefault()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email address</mat-label>
+          <input matInput type="email" autocomplete="email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" autocomplete="current-password" />
+        </mat-form-field>
+
+        <button class="primary-action" matButton="filled" type="submit" disabled>
+          Sign in
+        </button>
+      </form>
+
+      <p class="availability-note">Sign-in will be available soon.</p>
+
+      <div class="separator" aria-hidden="true">
+        <span></span>
+        <span>or</span>
+        <span></span>
+      </div>
+
+      <button class="google-action" matButton="outlined" type="button" disabled>
+        <span class="google-mark" aria-hidden="true">G</span>
+        Continue with Google
+      </button>
+
+      <a class="forgot-link" routerLink="/resetpassword">Forgot your password?</a>
+
+      <p class="register-prompt">
+        Don't have an account?
+        <a routerLink="/register">Create account</a>
+      </p>
+    </div>
+  </section>
+
+  <aside class="brand-panel" aria-label="Notitia branding">
+    <div class="brand-decoration brand-decoration-one" aria-hidden="true"></div>
+    <div class="brand-decoration brand-decoration-two" aria-hidden="true"></div>
+
+    <div class="brand-content">
+      <div class="logo-placeholder" role="img" aria-label="Logo placeholder">
+        <span class="logo-symbol" aria-hidden="true"></span>
+        <span>Your logo</span>
+      </div>
+      <p class="brand-name">Notitia</p>
+      <p class="brand-caption">Your brand identity will appear here.</p>
+    </div>
+
+    <p class="brand-footer">A place to find your people.</p>
+  </aside>
+</main>
