@@ -8,4 +8,21 @@
     <button mat-menu-item>Settings</button>
   </mat-menu>
   <span>Notitia </span>
+  <span class="toolbar-spacer"></span>
+  <button matIconButton [matMenuTriggerFor]="accountMenu" aria-label="Open account menu">
+    @if (avatarUrl(); as url) {
+      <img class="avatar" [ngSrc]="url" width="40" height="40" alt="" (error)="avatarFailed()" />
+    } @else {
+      <mat-icon>account_circle</mat-icon>
+    }
+  </button>
+  <mat-menu #accountMenu="matMenu" xPosition="before">
+    <a mat-menu-item routerLink="/profile">Your profile</a>
+    <button mat-menu-item type="button" [disabled]="loggingOut()" (click)="logout()">
+      {{ loggingOut() ? 'Signing out…' : 'Log out' }}
+    </button>
+  </mat-menu>
 </mat-toolbar>
+@if (errorMessage()) {
+  <p class="toolbar-error" role="alert">{{ errorMessage() }}</p>
+}

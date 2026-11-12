@@ -1,1 +1,102 @@
-<p>register-page works!</p>
+<main class="login-page">
+  <section class="form-panel" aria-labelledby="register-title">
+    <div class="form-content">
+      <p class="eyebrow">WELCOME</p>
+      <h1 id="register-title">Create your account</h1>
+      <p class="intro">Enter your details to get started with Notitia.</p>
+
+      <!-- Do not claim an account was created when signup returned no session. -->
+      @if (confirmationPending()) {
+        <p class="confirmation-message" role="status">
+          If your account can be registered, check your email for a confirmation link.
+        </p>
+      } @else if (accountCreated()) {
+        <!-- Retry finishing registration without creating a second account. -->
+        @if (errorMessage()) {
+          <p class="sign-in-error" role="alert">{{ errorMessage() }}</p>
+          <button class="primary-action" matButton="filled" type="button" [disabled]="signingOut()"
+            (click)="finishRegistration()">Try again</button>
+        } @else {
+          <p class="confirmation-message" role="status">Your account was created.</p>
+        }
+      } @else {
+        <!-- Signal Forms handles validation rather than the browser's default messages. -->
+        <form class="login-form" novalidate (submit)="register($event)">
+          <mat-form-field appearance="outline">
+            <mat-label>Full name</mat-label>
+            <input matInput type="text" autocomplete="name" [formField]="registerForm.fullName" />
+            <!-- Show a field's first error after it is touched, including on submission. -->
+            @if (registerForm.fullName().touched() && registerForm.fullName().invalid()) {
+              <mat-error>{{ registerForm.fullName().errors()[0].message }}</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Gender</mat-label>
+            <select matNativeControl [formField]="registerForm.gender">
+              <option value="">Select gender</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
+            @if (registerForm.gender().touched() && registerForm.gender().invalid()) {
+              <mat-error>{{ registerForm.gender().errors()[0].message }}</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email address</mat-label>
+            <input matInput type="email" autocomplete="email" [formField]="registerForm.email" />
+            @if (registerForm.email().touched() && registerForm.email().invalid()) {
+              <mat-error>{{ registerForm.email().errors()[0].message }}</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" autocomplete="new-password" [formField]="registerForm.password" />
+            @if (registerForm.password().touched() && registerForm.password().invalid()) {
+              <mat-error>{{ registerForm.password().errors()[0].message }}</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm password</mat-label>
+            <input matInput type="password" autocomplete="new-password" [formField]="registerForm.confirmPassword" />
+            @if (registerForm.confirmPassword().touched() && registerForm.confirmPassword().invalid()) {
+              <mat-error>{{ registerForm.confirmPassword().errors()[0].message }}</mat-error>
+            }
+          </mat-form-field>
+
+          @if (errorMessage()) {
+            <p class="sign-in-error" role="alert">{{ errorMessage() }}</p>
+          }
+          <button class="primary-action" matButton="filled" type="submit" [disabled]="registerForm().submitting()">
+            {{ registerForm().submitting() ? 'Creating account…' : 'Create account' }}
+          </button>
+        </form>
+
+        <div class="separator" aria-hidden="true"><span></span><span>or</span><span></span></div>
+        <button class="google-action" matButton="outlined" type="button" disabled>
+          <span class="google-mark" aria-hidden="true">G</span>
+          Continue with Google
+        </button>
+      }
+
+      <p class="register-prompt">Already have an account? <a routerLink="/login">Sign in</a></p>
+    </div>
+  </section>
+
+  <aside class="brand-panel" aria-label="Notitia branding">
+    <div class="brand-decoration brand-decoration-one" aria-hidden="true"></div>
+    <div class="brand-decoration brand-decoration-two" aria-hidden="true"></div>
+    <div class="brand-content">
+      <div class="logo-placeholder" role="img" aria-label="Logo placeholder">
+        <span class="logo-symbol" aria-hidden="true"></span>
+        <span>Your logo</span>
+      </div>
+      <p class="brand-name">Notitia</p>
+      <p class="brand-caption">Your brand identity will appear here.</p>
+    </div>
+    <p class="brand-footer">A place to find your people.</p>
+  </aside>
+</main>

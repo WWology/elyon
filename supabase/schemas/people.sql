@@ -1,23 +1,27 @@
 -- Create a table for public profiles
-create table profiles (
-  id uuid references auth.users on delete cascade not null primary key,
+create type public.gender as enum ('M', 'F');
+create table public.people (
+  id uuid not null,
   updated_at timestamp with time zone,
 
-  full_name text,
-  avatar_url text
+  full_name text not null,
+  gender public.gender not null,
+  avatar_url text,
+  constraint profiles_pkey primary key (id),
+  constraint profiles_id_fkey foreign key (id) references auth.users on delete cascade
 );
 -- Set up Row Level Security (RLS)
 -- See https://supabase.com/docs/guides/auth/row-level-security for more details.
-alter table profiles
+alter table public.people
   enable row level security;
 
-create policy "Public profiles are viewable by everyone." on profiles
+create policy "Public profiles are viewable by everyone." on public.people
   for select using (true);
 
-create policy "Users can insert their own profile." on profiles
+create policy "Users can insert their own profile." on public.people
   for insert with check ((select auth.uid()) = id);
 
-create policy "Users can update own profile." on profiles
+create policy "Users can update own profile." on public.people
   for update using ((select auth.uid()) = id);
 
 -- This trigger automatically creates a profile entry when a new user signs up via Supabase Auth.
@@ -27,8 +31,13 @@ returns trigger
 set search_path = ''
 as $$
 begin
-  insert into public.profiles (id, full_name, avatar_url)
-  values (new.id, new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'avatar_url');
+  insert into public.people (id, full_name, gender, avatar_url)
+  values (
+    new.id,
+    new.raw_user_meta_data->>'full_name',
+    (new.raw_user_meta_data->>'gender')::public.gender,
+    new.raw_user_meta_data->>'avatar_url'
+  );
   return new;
 end;
 $$ language plpgsql security definer;

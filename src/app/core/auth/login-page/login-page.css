@@ -60,11 +60,10 @@ mat-form-field,
   border-radius: 0.75rem;
 }
 
-.availability-note {
+.sign-in-error {
   margin: 0.75rem 0 0;
-  color: var(--mat-sys-on-surface-variant);
+  color: var(--mat-sys-error);
   font-size: 0.875rem;
-  text-align: center;
 }
 
 .separator {

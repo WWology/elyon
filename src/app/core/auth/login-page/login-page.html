@@ -5,23 +5,33 @@
       <h1 id="login-title">Sign in to Notitia</h1>
       <p class="intro">Enter your details to access your account.</p>
 
-      <form class="login-form" (submit)="$event.preventDefault()">
+      <!-- Let Signal Forms display validation messages instead of the browser's built-in prompts. -->
+      <form class="login-form" novalidate (submit)="signIn($event)">
         <mat-form-field appearance="outline">
           <mat-label>Email address</mat-label>
-          <input matInput type="email" autocomplete="email" />
+          <input matInput type="email" autocomplete="email" [formField]="loginForm.email" />
+          <!-- Show errors after the field is touched or a submission marks it touched. -->
+          @if (loginForm.email().touched() && loginForm.email().invalid()) {
+            <mat-error>{{ loginForm.email().errors()[0].message }}</mat-error>
+          }
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
-          <input matInput type="password" autocomplete="current-password" />
+          <input matInput type="password" autocomplete="current-password" [formField]="loginForm.password" />
+          @if (loginForm.password().touched() && loginForm.password().invalid()) {
+            <mat-error>{{ loginForm.password().errors()[0].message }}</mat-error>
+          }
         </mat-form-field>
 
-        <button class="primary-action" matButton="filled" type="submit" disabled>
-          Sign in
+        @if (signInError()) {
+          <p class="sign-in-error" role="alert">{{ signInError() }}</p>
+        }
+
+        <button class="primary-action" matButton="filled" type="submit" [disabled]="loginForm().submitting()">
+          {{ loginForm().submitting() ? 'Signing in…' : 'Sign in' }}
         </button>
       </form>
-
-      <p class="availability-note">Sign-in will be available soon.</p>
 
       <div class="separator" aria-hidden="true">
         <span></span>
